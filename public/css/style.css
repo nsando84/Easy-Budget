@@ -91,7 +91,20 @@ body {
 }
 
 .input-div {
+	text-align: center;
+	border: 1px solid black;
+	margin: auto;
+}
+
+.input-wrapper {
 	max-width: 600px;
+	margin: auto;
+}
+
+.transaction-table {
+	max-width: 600px;
+	margin: auto;
+	border: 1px solid black;
 }
 
 
@@ -103,6 +116,14 @@ body {
 
 	body {
 		padding: 0;
+	}
+
+}
+
+
+@media (max-width: 350px) {
+	.total-amount {
+		margin: auto;
 	}
 
 }

@@ -10,43 +10,49 @@
 <body class="">
     <div class="container m-3 div-wrapper mx-auto">
         <div class="main-div">
-            <nav class="nav-brand navbar mt-3 pb-2">
-                <span class="ml-4 h1">Easy.<span class="budget-font">Budget</span></span>
-                <div class="mr-4">
-                <span class="d-block text-dark border-bottom">Total: </span>
-                <span class="total-amount ">$2000</span>
+                <nav class="nav-brand navbar mt-3 pb-2">
+                    <span class="ml-4 h1">Easy.<span class="budget-font">Budget</span></span>
+                    <div class="mr-4">
+                    <span class="d-block text-dark border-bottom">Total: </span>
+                    <span class="total-amount">$2000</span>
+                    </div>
+                </nav>
+
+                <div class="chart"></div>
+
+                <div class="input-wrapper mt-3">
+                        <form class="form-inline">
+                            <div class="form-row mx-auto">
+                                <div class="col">
+                                    <input class="form-control form-control-sm" type="text">
+                                </div>
+                                <div class="col digit-input mx-auto">
+                                    <input class="form-control form-control-sm" type="number">
+                                </div>
+                            
+                                <div class="col input-group mx-auto ">
+                                    <select class="form-control form-control-sm">
+                                        <option>Action</option>
+                                        <option>Add Funds</option>
+                                        <option>Subtract Funds</option>
+                                    </select>  
+                                </div>
+                                <div class="colm x-auto">
+                                    <button type="button" class="btn-sm">Submit</button>
+                                </div>
+                            </div>         
+                        </form>
                 </div>
-            </nav>
 
-    <div class="chart"></div>
-
-    <div class="input-div mt-3 mx-auto">
-        <form class="form-inline">
-            <div class="form-row">
-              <div class="col">
-                <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
-              </div>
-              <div class="col">
-                <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
-              </div>
-            </div>
-            <div class="input-group">
-                <select class="form-control form-control-sm">
-                    <option>Action</option>
-                    <option>Add Funds</option>
-                    <option>Subtract Funds</option>
-                  </select>
-            </div>
-
-            <button type="button" class="btn-sm btn-success">Success</button>
-
-          </form>
-
-
-    </div>
-
-
-
+                <table class="transaction-table mt-4 table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Transaction</th>
+                            <th scope="col">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody class="transaction-data"></tbody>
+                </table>
 
         </div>
     </div>
