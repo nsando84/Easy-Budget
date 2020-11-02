@@ -99,10 +99,11 @@ body {
 .input-wrapper {
 	max-width: 600px;
 	margin: auto;
+	height: 50px;
 }
 
 .transaction-table {
-	max-width: 600px;
+	max-width: 800px;
 	margin: auto;
 	border: 1px solid black;
 }
