@@ -5,7 +5,6 @@ const Transaction = require('../models/transaction')
 router.get('/api/transactions', async (req, res) => {
     try {
         const transData = await Transaction.find({}).sort({date: -1})
-        console.log(transData)
         res.json(transData)
     } 
     catch(err) {

@@ -77,15 +77,15 @@ body {
 	text-decoration: underline;
 }
 
-.total-amount {
-	color: green;
+#total-amount {
 	font-size: 40px;
+	font-family: 'Times New Roman', Times, serif;
 }
 
-.chart {
+#chart {
 	max-width: 500px;
 	height: 200px;
-	border: 1px solid black;
+	border: 1px solid rgb(96, 35, 139);
 	margin: auto;
 	margin-top: 10px;
 }
