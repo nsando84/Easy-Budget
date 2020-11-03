@@ -40,6 +40,9 @@ const inputData = (data) => {
     })
     .then(res => res.json())
     .then(data => console.log(data))
+    .then(() => {
+        getData()
+    })
 }
 
 let transaction = []
@@ -62,17 +65,18 @@ const postData = (transaction) => {
     const totalAmountDisplay = document.getElementById('total-amount')
     tableBody.innerHTML = ''
 
-    transaction.reverse()
+    let transReveresed = transaction.reverse()
 
     let totalAmount = 0
     let chartData = [[],[]]
-    for (let singleTrans of transaction) {
+    for (let singleTrans of transReveresed) {
+        
         totalAmount += singleTrans.value
         const singleDate = singleTrans.date
         const singleName = singleTrans.name
         const singleValue = singleTrans.value
-        
-        chartData[0].push(singleDate)
+        console.log(singleValue)
+        chartData[0].push(singleDate.slice(0, 10))
         chartData[1].push(totalAmount)
         
         const tableRow = document.createElement('tr')
@@ -80,7 +84,7 @@ const postData = (transaction) => {
         <td class="border col-2">${singleName}</td>
         <td class="border">${singleValue}</td>`
 
-        tableBody.append(tableRow)
+        tableBody.prepend(tableRow)
         
     }
 
