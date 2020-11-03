@@ -50,12 +50,13 @@ body {
 .div-wrapper {
 	background-color: rgb(224, 232, 235);
 	border-radius: 5%;
-    height: 800px;
+    min-height: 800px;
 	max-width: 1000px;
 	padding: 30px 15px
 }
 
 .main-div {
+	padding-bottom: 10px;
 	background-color: white;
 	border: 2px solid rgb(190, 188, 188);
 	border-radius: 5%;

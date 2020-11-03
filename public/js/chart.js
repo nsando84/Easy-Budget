@@ -1,10 +1,8 @@
 
 const makeChart = (transaction) => {
 
-
     const chartDiv = document.getElementById('chart')
     const chartId = document.getElementById('myChart')
-
 
     chartId.remove()
     chartId.innerHTML = `<canvas id="myChart" height="200" width="500"></canvas>`

@@ -12,7 +12,7 @@ transactionBtn.addEventListener('click', (event) => {
     } else {
         document.getElementById('error-message').innerHTML = ''
         let mathConverted = parseInt(transactionAmount.value);
-        if (transactionType.value == 'Subtract') {
+        if (transactionType.value == 'Withdraw') {
             mathConverted = transactionAmount.value * -1
         } 
         const dataToDb = {
@@ -39,7 +39,6 @@ const inputData = (data) => {
         body: JSON.stringify({data})
     })
     .then(res => res.json())
-    .then(data => console.log(data))
     .then(() => {
         getData()
     })
@@ -72,16 +71,15 @@ const postData = (transaction) => {
     for (let singleTrans of transReveresed) {
         
         totalAmount += singleTrans.value
-        const singleDate = singleTrans.date
+        const singleDate = singleTrans.date.slice(0, 10)
         const singleName = singleTrans.name
         const singleValue = singleTrans.value
-        console.log(singleValue)
-        chartData[0].push(singleDate.slice(0, 10))
+        chartData[0].push(singleDate)
         chartData[1].push(totalAmount)
         
         const tableRow = document.createElement('tr')
         tableRow.innerHTML = `<td class="border">${singleDate}</td>
-        <td class="border col-2">${singleName}</td>
+        <td class="border col">${singleName}</td>
         <td class="border">${singleValue}</td>`
 
         tableBody.prepend(tableRow)
