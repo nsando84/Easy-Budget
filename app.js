@@ -9,10 +9,10 @@ const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${p
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'))
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 7000
 
 
-app.use('/', require('./routes/transaction'))
+app.use(require('./routes/transaction'))
 
 
 app.listen(PORT, () => {
