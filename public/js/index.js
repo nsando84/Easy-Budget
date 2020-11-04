@@ -1,5 +1,3 @@
-
-
 const transactionBtn = document.getElementById('add-transaction-button')
 const transactionName = document.getElementById('transaction-name')
 const transactionType = document.getElementById('transaction-type')
@@ -41,6 +39,10 @@ const inputData = (data) => {
     .then(res => res.json())
     .then(() => {
         getData()
+    })
+    .catch(res => {
+        savedToIndex(data)
+        console.log('inside catch')
     })
 }
 

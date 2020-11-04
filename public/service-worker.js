@@ -5,7 +5,7 @@ const cacheAssets = [
     'index.html',
     './js/chart.js',
     './js/index.js',
-
+    './js/indexedDb.js'
 ]
 
 
@@ -46,7 +46,7 @@ self.addEventListener('fetch', e => {
     console.log('fetching service worker')
     e.respondWith(
         fetch(e.request).catch(() => {
-            caches.match(e.request)
+            return caches.match(e.request)
         })
     )
 })
