@@ -1,7 +1,9 @@
 
-const cacheName = 'v1'
+const cacheName = 'pages-cache-v3'
 
 const cacheAssets = [
+    '/',
+    './css/style.css',
     'index.html',
     './js/chart.js',
     './js/index.js',
@@ -10,45 +12,86 @@ const cacheAssets = [
 
 
 self.addEventListener('install', (event) => {
+    console.log('installing service worker')
     event.waitUntil(
-      caches
-        .open(cacheName)
-        .then((cache) => cache.addAll(cacheAssets))
-        .then(self.skipWaiting())
+      caches.open(cacheName)
+        .then(cache => {
+          cache.addAll(cacheAssets)
+          self.skipWaiting()  
+        })
+      )
+  });
+
+
+
+
+  self.addEventListener('fetch', event => {
+    // console.log('Fetch event for ', event.request.url);
+    event.respondWith(
+      caches.match(event.request)
+      .then(response => {
+        if (response) {
+          // console.log('Found ', event.request.url, ' in cache');
+          return response;
+        }
+        // console.log('Network request for ', event.request.url);
+        return fetch(event.request)
+  
+        // TODO 4 - Add fetched files to the cache
+  
+      }).catch(error => {
+          console.log(error)
+      })
     );
   });
 
 
-self.addEventListener('activate', e => {
-    console.log('service worker activated')
-
-    e.waitUntil(
-        caches
-          .keys()
-          .then((cacheNames) => {
-            return cacheNames.filter((cacheNames) => !cacheName.includes(cacheNames));
+  self.addEventListener('activate', event => {
+    console.log('Activating new service worker...');
+  
+    const cacheAllowlist = [cacheName]
+  
+    event.waitUntil(
+      caches.keys().then(cacheNames => {
+        return Promise.all(
+          cacheNames.map(cacheName => {
+            if (cacheAllowlist.indexOf(cacheName) === -1) {
+              return caches.delete(cacheName);
+            }
           })
-          .then((cachesToDelete) => {
-            return Promise.all(
-              cachesToDelete.map((cacheToDelete) => {
-                return caches.delete(cacheToDelete);
-              })
-            );
-          })
-          .then(() => self.clients.claim())
-      );
-    });
+        );
+      })
+    );
+  });
+
+
+let db;
+  self.addEventListener('sync', function(event) {
+    console.log('test sync function..')
+  if (event.tag === 'syncDb') {
+      
+      // const request = indexedDB.open('easyBudgetDb')
+
+      request.onsuccess = event => {
+        db = event.target.result
+      }
+
+      const transact = db.transaction('transactions', 'readonly')
+      const transactionData = transact.objectStore('transactions')
+      const request = transactionData.openCursor()
+      request.onsuccess = event => {
+          const cursor = event.target.result
+          if (cursor) {
+              console.log(cursor)
+              cursor.continue()
+          }
+      }
+  }
+});
 
 
 
 
-self.addEventListener('fetch', e => {
-    console.log('fetching service worker')
-    e.respondWith(
-        fetch(e.request).catch(() => {
-            return caches.match(e.request)
-        })
-    )
-})
+ 
 
 

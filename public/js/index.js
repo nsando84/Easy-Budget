@@ -49,15 +49,16 @@ const inputData = (data) => {
 let transaction = []
 
 const getData = () => {
-
     fetch('/api/transactions')
-  .then(response => {
+    .then(response => {
+
     return response.json();
-  })
-  .then(data => {
+    })
+    .then(data => {
+        
     transaction = data
     postData(transaction)
-  })
+    })
 
 }
 

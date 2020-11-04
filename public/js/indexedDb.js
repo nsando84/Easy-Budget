@@ -1,6 +1,7 @@
 
 
 let db;
+
 const request = indexedDB.open('easyBudgetDb', 1)
     
 request.onupgradeneeded = event => {
