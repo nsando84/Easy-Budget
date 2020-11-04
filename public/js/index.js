@@ -27,6 +27,8 @@ transactionBtn.addEventListener('click', (event) => {
  
 })
 
+
+
 const inputData = (data) => {
     fetch('/api/transactions', {
         method: 'POST',
@@ -102,3 +104,4 @@ const postData = (transaction) => {
 }
 
 getData()
+

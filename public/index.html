@@ -61,26 +61,26 @@
 
         </div>
     </div>
-<script>
 
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker
-            .register('service-worker.js')
-            .then(registration  => navigator.serviceWorker.ready)    
-            .then(registration => {
-                console.log(registration)
-                return registration.sync.register('syncDb');
-            })        
-            .catch(err => console.log(err))
-    })
-}
-  
-
-</script>
 <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
-<script src="js/indexedDb.js"></script>
-<script src="js/chart.js"></script>
-<script src="js/index.js"></script>
+<script src="./js/indexedDb.js"></script>
+<script src="./js/chart.js"></script>
+<script src="./js/index.js"></script>
+<script type="module">
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('service-worker.js')
+              .then(registration  => navigator.serviceWorker.ready)    
+              .then(registration => {
+                  return registration.sync.register('syncDb');
+              })        
+              .catch(err => console.log(err))
+      })
+    }
+    
+</script>
+
 </body>
 </html>
