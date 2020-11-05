@@ -14,9 +14,9 @@
 
   
 
-  ### The task was to create a budget application that will also use Service Workers, Background Sync, IndexedDb to hold transactions if user doesn't have connection.
+  ### The task was to create a budget application that will queue transaction requests if the user loses connection.
   
-  ### Technology used: Service Worker, Indexed Db, Background Sync, Mongoose, & Express. 
+  ### Service Worker, Indexed Db, Background Sync, Mongoose, & Express. 
 
  #### Click  [HERE](https://easybudget9.herokuapp.com/)  to try. (Heroku deployed) 
  
@@ -58,7 +58,7 @@
 
 ### **Usage**
 
-#### This application is the users to track their budget. 
+#### This application allows a user to track their budget. 
 
 ![Screen Shot 2020-11-04 at 5 32 14 PM](https://user-images.githubusercontent.com/67135603/98187049-e63b4780-1ec4-11eb-80fe-a22885546e87.png)
 
