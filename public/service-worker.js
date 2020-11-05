@@ -1,7 +1,5 @@
 
-
-
-const cacheName = 'pages-cache-v1'
+const cacheName = 'pages-cache-v2'
 
 const cacheAssets = [
     '/',
@@ -14,7 +12,7 @@ const cacheAssets = [
 
 
 self.addEventListener('install', (event) => {
-    console.log('installing service worker')
+    console.log('Installing service worker')
     event.waitUntil(
       caches.open(cacheName)
         .then(cache => {
@@ -28,15 +26,12 @@ self.addEventListener('install', (event) => {
 
 
   self.addEventListener('fetch', event => {
-    // console.log('Fetch event for ', event.request.url);
     event.respondWith(
       caches.match(event.request)
       .then(response => {
         if (response) {
-          // console.log('Found ', event.request.url, ' in cache');
           return response;
         }
-        // console.log('Network request for ', event.request.url);
         return fetch(event.request)  
       }).catch(error => {
           console.log(error)
@@ -46,7 +41,7 @@ self.addEventListener('install', (event) => {
 
 
   self.addEventListener('activate', event => {
-    // console.log('Activating new service worker...');
+    console.log('Activating new service worker/Deleting old ones');
     const cacheAllowlist = [cacheName]
   
     event.waitUntil(
@@ -65,17 +60,14 @@ self.addEventListener('install', (event) => {
 
   
 self.addEventListener('sync', function(event) {
-  // console.log('test sync function..')
+  console.log('checking for offline data.')
 if (event.tag === 'syncDb') {
   let db;
   const request = indexedDB.open('easyBudgetDb', 1)
-  
   request.onsuccess = event => {
     db = event.target.result
     loadInputs()
-    // console.log('success DB') 
   }
-
 
   loadInputs = () => {
   
@@ -85,7 +77,8 @@ if (event.tag === 'syncDb') {
   requestDb.onsuccess = event => {
       const cursor = event.target.result
       if (cursor) {    
-          inputData(cursor.value)
+          console.log('adding data from indexedDb')
+          inputDataSw(cursor.value)
           cursor.delete()
           cursor.continue()
       }
@@ -97,7 +90,7 @@ if (event.tag === 'syncDb') {
 
 
 
-const inputData = (data) => {
+const inputDataSw = (data) => {
   fetch('/api/transactions', {
       method: 'POST',
       headers: {
@@ -107,8 +100,10 @@ const inputData = (data) => {
       body: JSON.stringify({data})
   })
   .then(res => res.json())
-  .then((e) => {
-      console.log(e)
+  .then(e => {
+      console.log('Saving indexedDb file into database.')
+      console.log('Delete entry from indexedDb.')
+      testest()
   })
   .catch(res => {
       console.log(res)

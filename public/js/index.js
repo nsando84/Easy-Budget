@@ -44,7 +44,7 @@ const inputData = (data) => {
     })
     .catch(res => {
         savedToIndex(data)
-        console.log('inside catch')
+        console.log('Saving to indexed Db')
     })
 }
 
