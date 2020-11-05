@@ -25,13 +25,14 @@
   ### Features in this application:
   
   - Users can track budget on application.
-  - Users can view chart labeled by date.
+  - Users can view chart of transactions.
   - Users can see current balance.
   - Validation on input to reduce errors.
   - Application will save input into IndexedDb when connection drops.
   - Application uses Services Worker to cache files.
   - Application uses Services Worker to sync data with MongoDB when reconnection is established.
   - Deplayed using Heroku.
+  - MongoDB Atlas used to host database.
   
 ---
 
