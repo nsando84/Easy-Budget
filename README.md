@@ -14,11 +14,11 @@
 
   
 
-  ### The task was to create a budget application that will also work offline. 
+  ### The task was to create a budget application that will use Service Workers/Background Sync, IndexedDb to hold transaction if user doesn't have connection.
   
-  ## Technology used: Service Worker, Indexed Db, Mongoose, & Express. 
+  ## Technology used: Service Worker, Indexed Db, Background Sync, Mongoose, & Express. 
 
- ### Click [here](https://easybudget9.herokuapp.com/) to try. (Heroku deplayed) 
+ ### Click  [HERE] (https://easybudget9.herokuapp.com/) to try. (Heroku deplayed) 
  
  ### Minute long demo ---- [Right Here](https://drive.google.com/file/d/1b4y7CeQteqY743mWuUE70EmCCkhwXVWx/view)
  
@@ -29,7 +29,7 @@
   - Users can see current balance.
   - Validation on input to reduce errors.
   - Application will save input into IndexedDb when connection drops.
-  - Application uses Services Worker to cache files for offline viewing.
+  - Application uses Services Worker to cache files.
   - Application uses Services Worker to sync data with MongoDB when reconnection is established.
   - Deplayed using Heroku.
   
