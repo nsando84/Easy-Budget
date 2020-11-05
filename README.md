@@ -18,7 +18,7 @@
   
   ## Technology used: Service Worker, Indexed Db, Mongoose, & Express. 
 
- #### Try it on Heroku - [here](https://easybudget9.herokuapp.com/)
+ ### Click [here](https://easybudget9.herokuapp.com/) to try. (Heroku deplayed) 
  
  ### Minute long demo ---- [Right Here](https://drive.google.com/file/d/1b4y7CeQteqY743mWuUE70EmCCkhwXVWx/view)
  
