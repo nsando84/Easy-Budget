@@ -18,11 +18,11 @@
   
   ### Technology used: Service Worker, Indexed Db, Background Sync, Mongoose, & Express. 
 
- ### Click  [HERE](https://easybudget9.herokuapp.com/)  to try. (Heroku deplayed) 
+ ## Click  [HERE](https://easybudget9.herokuapp.com/)  to try. (Heroku deplayed) 
  
- ### Minute long demo ---- [Right Here](https://drive.google.com/file/d/1b4y7CeQteqY743mWuUE70EmCCkhwXVWx/view)
+ ## Minute long demo ---- [Right Here](https://drive.google.com/file/d/1b4y7CeQteqY743mWuUE70EmCCkhwXVWx/view)
  
-  ### Features in this application:
+  ## Features in this application:
   
   - Users can track budget on application.
   - Users can view chart of transactions.
