@@ -14,7 +14,7 @@
 
   
 
-  ### The task was to create a budget application that will use Service Workers/Background Sync, IndexedDb to hold transaction if user doesn't have connection.
+  ### The task was to create a budget application that will also use Service Workers, Background Sync, IndexedDb to hold transactions if user doesn't have connection.
   
   ## Technology used: Service Worker, Indexed Db, Background Sync, Mongoose, & Express. 
 
