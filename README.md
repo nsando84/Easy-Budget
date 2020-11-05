@@ -18,7 +18,7 @@
   
   ## Technology used: Service Worker, Indexed Db, Mongoose, & Express. 
 
- #### Try it out here jsdkljfklsdjfklsjfljks
+ #### Try it on Heroku - [here](https://easybudget9.herokuapp.com/)
  
  ### Minute long demo ---- [Right Here](https://drive.google.com/file/d/1b4y7CeQteqY743mWuUE70EmCCkhwXVWx/view)
  
@@ -31,6 +31,7 @@
   - Application will save input into IndexedDb when connection drops.
   - Application uses Services Worker to cache files for offline viewing.
   - Application uses Services Worker to sync data with MongoDB when reconnection is established.
+  - Deplayed using Heroku.
   
 ---
 
