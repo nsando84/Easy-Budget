@@ -14,9 +14,9 @@
 
   
 
-  ### The task was to create a budget application for a user that will work offline. 
+  ### The task was to create a budget application that will also work offline. 
   
-  ## using Service Worker, Indexed Db, Mongoose, & Express. 
+  ## Technology used: Service Worker, Indexed Db, Mongoose, & Express. 
 
  #### Try it out here jsdkljfklsdjfklsjfljks
  
