@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 dotenv.config()
 const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_DATABASE}?retryWrites=true&w=majority`
-const url2 = `mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb`
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
