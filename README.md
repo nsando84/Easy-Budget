@@ -1,6 +1,6 @@
 # Easy Budget   ![Github All Releases](https://img.shields.io/github/contributors/nsando84/Easy-Budget)   
 
-![Screen Shot 2020-11-04 at 5 30 41 PM](https://user-images.githubusercontent.com/67135603/98186572-e7b84000-1ec3-11eb-9465-914a46b26af7.png)
+![Screen Shot 2020-11-17 at 5 06 16 PM](https://user-images.githubusercontent.com/67135603/99469312-471c4400-28f7-11eb-8f59-8f2070f01720.png)
 
 
 
